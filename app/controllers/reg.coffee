@@ -6,7 +6,7 @@ class RegCtrl extends BaseCtrl
   initialize: =>
     # Get profiles from the cookies
     @$scope.profiles = if @$cookieStore.get('profiles')?
-      JSON.parse @$cookieStore.get('profiles')
+      JSON.parse(@$cookieStore.get('profiles')).reverse()
     else
       []
 
@@ -20,6 +20,7 @@ class RegCtrl extends BaseCtrl
     unless data.email in _.pluck @$scope.profiles, 'email'
       @$scope.profiles.push user
       @$cookieStore.put 'profiles', JSON.stringify(@$scope.profiles)
+      @$cookieStore.put 'session', JSON.stringify(user)
       @$state.go 'profile'
       @Alert.success 'You have been successfully registered'
     else
@@ -33,6 +34,7 @@ class RegCtrl extends BaseCtrl
       user.password is data.password and user.email is data.email
 
     if user?
+      @$cookieStore.put 'session', JSON.stringify(user)
       @$state.go 'profile'
       @Alert.success 'Welcome back!'
     else

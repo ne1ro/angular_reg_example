@@ -6,7 +6,7 @@ class ProfileCtrl extends BaseCtrl
   initialize: =>
     # Get session data
     if @$cookieStore.get('session')?
-      user = JSON.parse @$cookieStore.get('session')
+      @$scope.user = JSON.parse @$cookieStore.get('session')
     else
       @Alert.danger 'Unauthorized access'
       @$state.go 'index'
