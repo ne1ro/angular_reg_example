@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet' href='css/app.css')
+    title(ng-bind='title')
+
+  body(ng-app='regApp')
+    .container(ng-show='$root.alert', ng-mouseenter="showDescr = true", ng-mouseleave="showDescr = false", class="top-buffer")
+      .alert.alert-dismissable(ng-class="{ 'alert-success': $root.alert.class == 'success', 'alert-info': $root.alert.class == 'info', 'alert-warning': $root.alert.class == 'warning', 'alert-danger': $root.alert.class == 'danger' }")
+        button(type='button', class='close', ng-click='$root.alert = undefined') &times;
+        p.text-center(ng-bind="alert.message")
+        div(ng-cloak="", ng-show="showDescr && alert.descr")
+          hr
+          p.text-center {{ alert.descr.config.url }} {{ alert.descr.config.method }} : {{ alert.descr.status }} {{ alert.descr.statusText }}
+          p.text-center(ng-bind="alert.descr.data")
+
+    header
+      h2.text-center Angular.js registration example app
+    .container.content(ui-view, autoscroll="false")
+    script(type='text/javascript', src='js/app.js', async="")
