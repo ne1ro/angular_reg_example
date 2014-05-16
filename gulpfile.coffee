@@ -21,6 +21,7 @@ paths =
     'app/app.coffee'
     'app/classes/*.coffee'
     'app/services/*.coffee'
+    'app/directives/*.coffee'
     'app/controllers/*.coffee'
   ]
   styles: 'app/styles/**/*.sass'
