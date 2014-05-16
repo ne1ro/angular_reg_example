@@ -1,5 +1,5 @@
 .row
-  .col-md-6
+  .col-md-5
     h3.text-center Sign up
     form(name="signupForm")
       .row
@@ -29,8 +29,27 @@
           button.btn.btn-success.btn-block(type="button", ng-click="signUp(signup)") Sign up
         .col-md-4
 
-
-  .col-md-6
+  .col-md-2
+  .col-md-5
     h3.text-center Log in
     .row
+      form(name="loginForm")
+        .col-md-6
+          label Your email:
+          input.form-control(type="email", placeholder="example@example.com", required="true", ng-model="login.email")
+
+        .col-md-6
+          label Your password:
+          input.form-control(type="password", ng-minlength="8", required="true", ng-model="login.password")
+
+    .row(class="top-buffer", ng-show="loginForm.$valid")
+      .col-md-4
+      .col-md-4
+        button.btn.btn-success.btn-block(type="button", ng-click="logIn(login)") Log in
+      .col-md-4
 hr
+
+.col-md-4(ng-show="profiles.length > 0")
+  h3 Last users:
+  ul
+    li(ng-repeat="user in profiles", ng-bind="user.name")
