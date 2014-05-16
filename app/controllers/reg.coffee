@@ -28,4 +28,11 @@ class RegCtrl extends BaseCtrl
 
   # Log into the site
   logIn: (data) =>
-    #@$state.go 'profile'
+    # Find user in profiles by email and password
+    user = _.find @$scope.profiles, (user) ->
+      user.password is data.password and user.email is data.email
+    if user?
+      @$state.go 'profile'
+      @Alert.success 'Welcome back!'
+    else
+      @Alert.warning 'Incorrect data, try again'
