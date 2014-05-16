@@ -1,4 +1,5 @@
 app = angular.module("regApp", [
   'ngCookies'
   'ui.router'
-]).run ($rootScope) ->
+]).run ($rootScope, Alert) ->
+  Alert.info 'Sign up'
