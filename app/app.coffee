@@ -11,5 +11,6 @@ app = angular.module("regApp", [
   # Configure routes
   $stateProvider.state("index",
     url: "/",
-    templateUrl: "views/main.html"
+    templateUrl: "views/main.html",
+    controller: 'RegCtrl'
   )
