@@ -5196,3 +5196,13 @@ button.close {
     display: none !important; } }
 .top-buffer {
   margin-top: 1.5em; }
+
+input.ng-invalid.ng-dirty {
+  border-color: red !important; }
+
+input.ng-valid.ng-dirty {
+  border-color: green !important; }
+
+.error-hint {
+  color: red;
+  font-size: 0.75em; }
