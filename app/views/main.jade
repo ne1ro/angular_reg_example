@@ -7,17 +7,20 @@ hr
         .col-md-6
           label Your name:
           input(type="text", maxlength="30", placeholder="Jonh Smith", required="true", class="form-control", ng-model="signup.name")
+        
         .col-md-6
           label Your email:
           input(type="email", placeholder="example@example.com", required="true", class="form-control", ng-model="signup.email")
 
+
       .row(class="top-buffer")
         .col-md-6
           label Your password:
-          input(type="password", ng-minlength="8", required="true", class="form-control", ng-model="signup.password")
+          input(type="password", ng-minlength="8", required="true", class="form-control", ng-model="signup.password", check-pass="")
+        
         .col-md-6
           label Repeat password:
-          input(type="password", ng-minlength="8", required="true", class="form-control", ng-model="signup.passwordRepeated")
+          input(type="password", ng-minlength="8", required="true", class="form-control", ng-model="signup.passwordRepeated", password-match="signup.password")
 
       .row(class="top-buffer", ng-show="signupForm.$valid")
         .col-md-4
