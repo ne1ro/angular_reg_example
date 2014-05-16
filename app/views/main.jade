@@ -7,7 +7,7 @@ hr
         .col-md-6
           label Your name:
           input.form-control(type="text", maxlength="30", placeholder="Jonh Smith", required="true", ng-model="signup.name")
-        
+
         .col-md-6
           label Your email:
           input.form-control(type="email", placeholder="example@example.com", required="true", ng-model="signup.email")
@@ -18,7 +18,7 @@ hr
           label Your password:
           input.form-control(type="password", ng-minlength="8", required="true", ng-model="signup.password", check-pass="", name="password")
           p.top-buffer.text-right.error-hint(ng-show="signupForm.password.$invalid && signupForm.password.$dirty") Must have more than 7 symbols and digits
-        
+
         .col-md-6
           label Repeat password:
           input.form-control(type="password", ng-minlength="8", required="true", ng-model="signup.passwordRepeated", password-match="signup.password", name="passwordRepeated")

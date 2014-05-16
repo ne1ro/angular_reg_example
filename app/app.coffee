@@ -13,4 +13,8 @@ app = angular.module("regApp", [
     url: "/",
     templateUrl: "views/main.html",
     controller: 'RegCtrl'
+  ).state("profile",
+    url: "/profile",
+    templateUrl: "views/profile.html",
+    controller: 'ProfileCtrl'
   )
