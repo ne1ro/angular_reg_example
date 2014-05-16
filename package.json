@@ -1,0 +1,20 @@
+{
+  "name": "angular_reg_example",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": "1.6.x",
+    "gulp": "*",
+    "gulp-util": "*",
+    "gulp-coffee": "*",
+    "gulp-concat": "*",
+    "gulp-jade": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-connect": "*",
+    "gulp-if": "*",
+    "gulp-clean": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
