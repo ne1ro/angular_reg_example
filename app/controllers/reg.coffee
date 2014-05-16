@@ -3,4 +3,10 @@ class RegCtrl extends BaseCtrl
   @register '$scope', '$state'
 
   # On controller init
-  initialize: ->
+  initialize: =>
+
+  # Sign up new user
+  signUp: (data) =>
+
+  # Log into the site
+  logIn: (data) =>

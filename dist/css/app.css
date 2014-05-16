@@ -5196,3 +5196,9 @@ button.close {
     display: none !important; } }
 .top-buffer {
   margin-top: 1.5em; }
+
+input.ng-invalid {
+  border-color: red !important; }
+
+input.ng-valid:valid {
+  border-color: green !important; }
