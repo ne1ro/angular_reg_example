@@ -1,0 +1,28 @@
+{
+  "name": "angular_reg_example",
+  "version": "0.0.1",
+  "authors": [
+    "Alexey Kuznetsov <neiro.mail@gmail.com>"
+  ],
+  "description": "Registration and authentication in Angular.js",
+  "main": "dist/index.html",
+  "keywords": [
+    "registration",
+    "authentication"
+  ],
+  "homepage": "https://github.com/ne1ro/angular_reg_example",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-cookies": "1.2.x",
+    "bootstrap-sass-official": "*",
+    "lodash": "2.4.1",
+    "angular-ui-router": "0.2.x"
+  }
+}
