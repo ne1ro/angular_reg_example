@@ -48,3 +48,8 @@
         button.btn.btn-success.btn-block(type="button", ng-click="logIn(login)") Log in
       .col-md-4
 hr
+
+.col-md-4(ng-show="profiles.length > 0")
+  h3 Last users:
+  ul
+    li(ng-repeat="user in profiles", ng-bind="user.name")

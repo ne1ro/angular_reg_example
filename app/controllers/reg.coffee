@@ -28,4 +28,4 @@ class RegCtrl extends BaseCtrl
 
   # Log into the site
   logIn: (data) =>
-    @$state.go 'profile'
+    #@$state.go 'profile'
