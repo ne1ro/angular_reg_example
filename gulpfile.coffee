@@ -16,7 +16,6 @@ paths =
   scripts: [
     './bower_components/angular/angular.min.js'
     './bower_components/lodash/dist/lodash.min.js'
-    './bower_components/restangular/dist/restangular.min.js'
     './bower_components/angular-cookies/angular-cookies.min.js'
     './bower_components/angular-ui-router/release/angular-ui-router.min.js'
     'app/app.coffee'

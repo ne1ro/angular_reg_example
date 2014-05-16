@@ -1,4 +1,4 @@
 app = angular.module("regApp", [
   'ngCookies'
-  'ui-router'
+  'ui.router'
 ]).run ($rootScope) ->
