@@ -1,25 +1,21 @@
 # Check for strong password
-class CheckPass
-  constructor: () ->
-    # Test valid password
-    isValid = (s) ->
-      s and s.length > 7 and /\D/.test(s) and /\d/.test(s)
+class CheckPass extends BaseDirective
+  # Test valid password
+  _isValid = (s) ->
+    s and s.length > 7 and /\D/.test(s) and /\d/.test(s)
 
-    # Directive link function
-    link = (scope, elm, attrs, ngModelCtrl) ->
+  @options: =>
+    require: 'ngModel'
+    # Two-way binding
+    link: (scope, elm, attrs, ngModelCtrl) ->
       # Parse valid password value
       ngModelCtrl.$parsers.unshift (viewValue) ->
-        ngModelCtrl.$setValidity "strongPass", isValid(viewValue)
+        ngModelCtrl.$setValidity "strongPass", _isValid(viewValue)
         viewValue
 
       # Format validation
       ngModelCtrl.$formatters.unshift (modelValue) ->
-        ngModelCtrl.$setValidity "strongPass", isValid(modelValue)
+        ngModelCtrl.$setValidity "strongPass", _isValid(modelValue)
         modelValue
 
-    return {
-      require: "ngModel"
-      link
-    }
-
-angular.module('regApp').directive 'checkPass', CheckPass
+  @register()
