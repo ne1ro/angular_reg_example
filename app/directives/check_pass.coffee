@@ -17,3 +17,5 @@ class CheckPass extends BaseDirective
       ngModelCtrl.$formatters.unshift (modelValue) ->
         ngModelCtrl.$setValidity "strongPass", _isValid(modelValue)
         modelValue
+
+  @register()
