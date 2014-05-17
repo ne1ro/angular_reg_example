@@ -8,7 +8,6 @@ class CheckPass extends BaseDirective
     require: 'ngModel'
     # Two-way binding
     link: (scope, elm, attrs, ngModelCtrl) ->
-      console.log 'wut'
       # Parse valid password value
       ngModelCtrl.$parsers.unshift (viewValue) ->
         ngModelCtrl.$setValidity "strongPass", _isValid(viewValue)
@@ -18,7 +17,3 @@ class CheckPass extends BaseDirective
       ngModelCtrl.$formatters.unshift (modelValue) ->
         ngModelCtrl.$setValidity "strongPass", _isValid(modelValue)
         modelValue
-
-  @register()
-
-console.log CheckPass.options
